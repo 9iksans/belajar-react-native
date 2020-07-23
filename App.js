@@ -13,7 +13,7 @@ export default function App() {
       <TouchableWithoutFeedback onPress={()=> console.log("image pressed")}>
       <Image 
         source={{
-            width:300,
+            width:500,
             height: 200,
             uri : 'https://www.kaorinusantara.or.id/wp-content/uploads/2019/06/tz8.jpg',
             }}
