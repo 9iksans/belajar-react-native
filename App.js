@@ -14,7 +14,7 @@ export default function App() {
       <Image 
         source={{
             width:300,
-            height: 200,
+            height: 300,
             uri : 'https://www.kaorinusantara.or.id/wp-content/uploads/2019/06/tz8.jpg',
             }}
       />
