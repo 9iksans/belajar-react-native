@@ -1,26 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Image, TouchableWithoutFeedback}  from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+import LoginScreen from './app/screens/LoginScreen';
+import HomeScreen from './app/screens/HomeScreen';
 
-export default function App() {
+
+const Stack = createStackNavigator();
+
+function App() {
   console.log("App Executed");
   return (
-    <SafeAreaView style={styles.container}>
-      <Text onPress ={ ()=> console.log("text press") } >
-        Hello my Current Apps
-      </Text>
+    
+  <NavigationContainer>
+      <Stack.Navigator screenOptions={{
+        headerShown: false
+      }}> 
+        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
 
-      <TouchableWithoutFeedback onPress={()=> console.log("image pressed")}>
-      <Image 
-        source={{
-            width:500,
-            height: 200,
-            uri : 'https://www.kaorinusantara.or.id/wp-content/uploads/2019/06/tz8.jpg',
-            }}
-      />
-      </TouchableWithoutFeedback>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+   
   );
 }
 
@@ -33,3 +37,6 @@ const styles = StyleSheet.create({
 
   },
 });
+
+
+export default App;
